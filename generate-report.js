@@ -69,8 +69,15 @@ function createIssue(text) {
 
 }
 
-var source   = document.getElementById("entry-template").innerHTML;
-var template = Handlebars.compile(source);
-var html = template( JSON.parse(document.location.href.split('?')[1]) );
+window.addEventListener("message", receiveMessage, false);
 
-document.body.innerHTML = html;
+function receiveMessage(event)
+{
+// 	if (event.origin !== "http://fiu.instructure.com") { return; }
+
+	let source   = document.getElementById("entry-template").innerHTML;
+	let template = Handlebars.compile(source);
+	let html = template(even.data);
+
+	document.body.innerHTML = html;
+}
