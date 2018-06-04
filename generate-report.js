@@ -77,7 +77,7 @@ function receiveMessage(event)
 
 	let source   = document.getElementById("entry-template").innerHTML;
 	let template = Handlebars.compile(source);
-	let html = template(even.data);
+	let html = template(event.data);
 
 	document.body.innerHTML = html;
 }
