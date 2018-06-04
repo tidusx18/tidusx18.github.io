@@ -71,6 +71,6 @@ function createIssue(text) {
 
 var source   = document.getElementById("entry-template").innerHTML;
 var template = Handlebars.compile(source);
-var html = template(course);
+var html = template( JSON.parse(document.location.href.split('?')[1]) );
 
 document.body.innerHTML = html;
