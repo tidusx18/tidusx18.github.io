@@ -75,7 +75,7 @@ function receiveMessage(event)
 {
 // 	if (event.origin !== "http://fiu.instructure.com") { return; }
 	
-	console.log(''DATA: ', event.data)
+	console.log('DATA: ', event.data)
 
 	let source   = document.getElementById("entry-template").innerHTML;
 	let template = Handlebars.compile(source);
