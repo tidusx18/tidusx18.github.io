@@ -59,19 +59,19 @@ function createIssue(text) {
 
 }
 
+
 window.addEventListener('message', receiveMessage);
-window.opener.postMessage('', 'https://fiu.instructure.com')
+window.opener.postMessage('', 'https://fiu.instructure.com');
 
 
-function receiveMessage(event)
-{
-	if (event.origin !== 'http://fiu.instructure.com') { return; }
-	
-	console.log(event.origin)
+function receiveMessage(event) {
+
+	if (event.origin !== 'https://fiu.instructure.com') { return; }
 
 	let source   = document.getElementById("entry-template").innerHTML;
 	let template = Handlebars.compile(source);
 	let html = template(event.data);
 
 	document.body.innerHTML = html;
+
 }
