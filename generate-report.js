@@ -1,5 +1,5 @@
 Handlebars.registerHelper('hasTitle', (title) => {
-	
+
 	if(title) { return `<li><span class="property-name">Title:</span> ${title}</li>`; }
 
 	return `<li>${createIssue('Missing Title')}</li>`;
@@ -8,7 +8,7 @@ Handlebars.registerHelper('hasTitle', (title) => {
 
 
 Handlebars.registerHelper('hasAlt', (alt) => {
-	
+
 	if(alt) { return `<li><span class="property-name">Alt:</span> ${alt}</li>`; }
 
 	return `<li>${createIssue('Missing Alt')}</li>`;
@@ -17,28 +17,35 @@ Handlebars.registerHelper('hasAlt', (alt) => {
 
 
 Handlebars.registerHelper('isContextual', (isContextual) => {
-	
+
 	if(!isContextual) { return `<li>${createIssue('Not Contextual')}</li>`; }
-	
+
 });
 
 
 Handlebars.registerHelper('bbRef', (hasBlackboardReference) => {
-	
+
 	if(hasBlackboardReference) { return `<li>${createIssue('Blackboard Reference')}</li>`; }
-	
+
 });
 
 
 Handlebars.registerHelper('pearsonRef', (hasPearsonReference) => {
-	
+
 	if(hasPearsonReference) { return `<li>${createIssue('Pearson Reference')}</li>`; }
 
 });
 
 
+Handlebars.registerHelper('isReachable', (isReachable) => {
+
+	if(!isReachable) { return `<li>${createIssue('Review for Broken Link')}</li>`; }
+
+});
+
+
 Handlebars.registerHelper('textWarnings', (warnings) => {
-	
+
 	let html = '<span class="issue">';
 
 	if(warnings.allCaps) { html += 'Review for All Caps<br>' }
