@@ -75,6 +75,8 @@ function receiveMessage(event) {
 
 	if (event.origin !== 'https://fiu.instructure.com') { return; }
 
+	document.title = event.data.title;
+
 	let source   = document.getElementById("entry-template").innerHTML;
 	let template = Handlebars.compile(source);
 	let html = template(event.data);
