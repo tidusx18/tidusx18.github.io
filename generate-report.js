@@ -1,13 +1,3 @@
-// Handlebars.registerHelper('list', function(items, options) {
-//   var out = "<ul>";
-
-//   for(var i=0, l=items.length; i<l; i++) {
-//     out = out + "<li>" + options.fn(items[i]) + "</li>";
-//   }
-
-//   return out + "</ul>";
-// });
-
 Handlebars.registerHelper('hasTitle', (title) => {
 	
 	if(title) { return `<li><span class="property-name">Title:</span> ${title}</li>`; }
@@ -69,13 +59,15 @@ function createIssue(text) {
 
 }
 
-window.addEventListener("message", receiveMessage);
+window.addEventListener('message', receiveMessage);
+window.opener.postMessage('', 'https://fiu.instructure.com')
+
 
 function receiveMessage(event)
 {
-// 	if (event.origin !== "http://fiu.instructure.com") { return; }
+	if (event.origin !== 'http://fiu.instructure.com') { return; }
 	
-	console.log('DATA: ', event.data)
+	console.log(event.origin)
 
 	let source   = document.getElementById("entry-template").innerHTML;
 	let template = Handlebars.compile(source);
