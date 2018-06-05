@@ -75,7 +75,7 @@ function receiveMessage(event) {
 
 	if (event.origin !== 'https://fiu.instructure.com') { return; }
 
-	document.title = event.data.title;
+	document.title = `${event.data.title} Audit Report`;
 
 	let source   = document.getElementById("entry-template").innerHTML;
 	let template = Handlebars.compile(source);
