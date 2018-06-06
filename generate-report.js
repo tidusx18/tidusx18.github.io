@@ -1,7 +1,7 @@
-Handlebars.registerHelper('hasTitle', (title) => {
+Handlebars.registerHelper('hasTitle', (link) => {
 
-	if(title) { return `<li><span class="property-name">Title:</span> ${this.title}</li>`; }
-	if(this.href.includes('fiu.instructure.com')) { return `<li>${createIssue('Missing Title')}</li>`; }
+	if(link.title) { return `<li><span class="property-name">Title:</span> ${link.title}</li>`; }
+	if(link.href.includes('fiu.instructure.com')) { return `<li>${createIssue('Missing Title')}</li>`; }
 
 });
 
