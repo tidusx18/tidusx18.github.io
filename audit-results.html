@@ -24,6 +24,7 @@
               {{#if links}}
               <h4>LINKS:</h4>
               {{#each links}}
+              {{#unless title.includes('/preview')}}
               <ul>
                 <li><span class="property-name">Href:</span> {{href}}</li>
                 <li><span class="property-name">Anchor Text:</span> {{anchorText}}</li>
@@ -34,7 +35,7 @@
                 {{#isReachable isReachable}}{{/isReachable}}
                 {{#unless @last}}<hr>{{/unless}}
               </ul>
-              {{/each}}
+              {{/unless}}
               {{/if}}
               {{#if images}}
               <h4>IMAGES:</h4>
